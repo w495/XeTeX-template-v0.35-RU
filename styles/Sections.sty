@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% настройка отображения частей
+%%%
+
+%%%
+%%% Раздел без нумерации
+%%%
+
+	\newcommand{\Csection}[1]{
+		\cleardoublepage %
+		\phantomsection %
+		\addcontentsline{toc}{section}{#1} %
+		\section*{#1} %
+	}
+
+%%%
+%%% Надраздел для статей
+%%%
+
+	\newcommand{\supersection}[1]{
+		\cleardoublepage %
+		\phantomsection %
+		\addcontentsline{toc}{part}{#1} %
+		\part*{#1} %
+	}
+
+%%%
+%%% Раздел для вычислительной практики
+%%%
+
+	\newcommand{\CpSection}[2]{ %
+		%\cleardoublepage %
+		\clearpage %
+		\phantomsection %
+		\addcontentsline{toc}{section}{#1 #2}
+		\begin{center} %
+			\section*{{\large \uppercase{#1}}} %
+			\textbf{#2} %
+		\end{center}
+	}
+
+%%%
+%%% Раздел для вычислительной практики с подчеркиванием
+%%%
+
+	\newcommand{\CpDetail}[1]
+	{
+		\clearpage %
+		\phantomsection %
+		\addcontentsline{toc}{section}{#1} %
+		\begin{center}
+			\section*{\underline{\normalsize \uppercase{#1}}} 
+		\end{center}
+	}
+
+%%%
+%%% Подраздел для вычислительной практики с подчеркиванием
+%%%
+
+	\newcommand{\cpsubsection}[1]{ %
+		\begin{center}\section{{\large #1}}
+		\end{center}
+	}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% Отступы в оглавлении
+%%%
+
+	\usepackage[titles]{tocloft}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% Нумеруем
+%%%
+	\setcounter{secnumdepth}{3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% Уровень, до которого информация отображается в оглавлении
+%%%
+
+	\setcounter{tocdepth}{5} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% Параметры отступов и вида заголовков
+%%%
+
+	\usepackage{titlesec}
+	\titleformat{\section}[block]
+		{\bfseries\large\sffamily\raggedright}{\arabic{section}.}{1ex}{}
+	\titleformat{\subsection}[block]
+		{\bfseries\normalsize\sffamily\raggedright}{\arabic{section}.\arabic{subsection}.}{1ex}{}
+	\titleformat{\subsubsection}[block]{\normalsize\sffamily\raggedright}
+		{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}{1ex}{}
+		
+	\titleformat{\paragraph}[block]{\normalsize\sffamily\raggedright}{}{1ex}{}
+	\titleformat{\subparagraph}[block]{\normalsize\sffamily\raggedright}{}{1ex}{}
+	
+	\titlespacing*{\section}      {0pt}{3.50ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+	\titlespacing*{\subsection}   {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+	\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+

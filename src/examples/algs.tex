@@ -1,0 +1,111 @@
+
+\section{Алгоритмы и псевдокод}
+
+
+\subsection{clrscode, codebox}
+
+\begin{codebox}
+	\Procname{$\proc{\tt Ничего не делает}$}
+	\li \For 
+			$i \gets 0 $ \To $\infty$
+	\li \Do $i \gets i$
+\end{codebox}
+
+\index{сортировка вставкой}
+\begin{codebox}
+	\Procname{$\proc{\tt \textcolor{red}{Сортировка методом вставки} }(A)$}
+	\li \For $j \gets 2$ \To $\id{length}[A]$
+	\li \Do
+		$\id{key} \gets A[j]$
+	\li \Comment { \color[rgb]{0,0.5,0}\itshape  Кладем $A[j]$ в последовательность $A[1 \twodots j-1]$.}
+	\li $i \gets j-1$
+	\li \While $i > 0$ and $A[i] > \id{key}$
+	\li \Do
+		$A[i+1] \gets A[i]$
+	\li $i \gets i-1$
+	\End
+	\li $A[i+1] \gets \id{key}$
+		\End
+\end{codebox}
+
+\index{вставка в дерево}
+\begin{codebox}
+	\Procname{$\proc{\tt \textcolor{red}{Вставка в дерево}}(T,z)$}
+	\li $y \gets \const{nil}$
+	\li $x \gets \id{root}[T]$
+	\li 
+		\While $x \neq \const{nil}$
+	\li 
+			\Do
+				$y \gets x$
+	\li 
+				\If $\id{key}[z] < \id{key}[x]$
+	\li 			\Then $x \gets \id{left}[x]$
+	\li 		\Else $x \gets \id{right}[x]$
+				\End
+			\End
+	\li $p[z] \gets y$
+	\li \If $y = \const{nil}$
+	\li 	\Then
+			$\id{root}[T] \gets z$\>\>\>\>\>\>\>\>\Comment { \color[rgb]{0,0.5,0}\itshape  Дерево было пусто }
+	\li \Else
+			\If $\id{key}[z] <\ id{key}[y]$
+	\li 		\Then $\id{left}[y]\ gets z$
+	\li 	\Else $\id{right}[y] \gets z$
+			\End
+		\End
+\end{codebox}
+
+
+\pagebreak
+\subsection{algorithmic}
+
+\subsubsection{С нумерацией строк}
+
+\begin{algorithmic}[1]
+	\FORALL{$i$ such that $0\leq i\leq 10$}
+	\STATE carry out some processing
+	\ENDFOR
+\end{algorithmic}
+
+\subsubsection{Большой пример}
+
+\begin{algorithmic}
+	\REQUIRE $n \geq 0$
+	\ENSURE $y = x^n$
+	\STATE $y \Leftarrow 1$
+	\STATE $X \Leftarrow x$
+	\STATE $N \Leftarrow n$
+	\WHILE{$N \neq 0$}
+		\IF{$N$ is even}
+			\STATE $X \Leftarrow X \times X$
+			\STATE $N \Leftarrow N / 2$
+		\ELSE[$N$ is odd]
+			\STATE $y \Leftarrow y \times X$
+			\STATE $N \Leftarrow N - 1$
+		\ENDIF
+	\ENDWHILE
+\end{algorithmic}
+
+\subsubsection{Русский}
+
+\realgorithmic
+
+\begin{algorithmic}
+	\REQUIRE $n \geq 0$
+	\ENSURE $y = x^n$
+	\STATE $y \Leftarrow 1$
+	\STATE $X \Leftarrow x$
+	\STATE $N \Leftarrow n$
+	\WHILE{$N \neq 0$}
+		\IF{$N$ is even}
+			\STATE $X \Leftarrow X \times X$
+			\STATE $N \Leftarrow N / 2$
+		\ELSE[$N$ is odd]
+			\STATE $y \Leftarrow y \times X$
+			\STATE $N \Leftarrow N - 1$
+		\ENDIF
+	\ENDWHILE
+\end{algorithmic}
+
+\pagebreak %% Разрыв страницы :-)
