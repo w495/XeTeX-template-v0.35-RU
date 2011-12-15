@@ -1,0 +1,52 @@
+# English
+
+## What is this?
+
+XeTeX template for russian students.
+It was created for designing coursework, laboratory work and lecture notes.
+
+## Features:
+
+    * Customizing document properties (for pdf).
+    * Customizing bookmarks (bookmarks (for pdf)).
+    * Customizing the appearance of the document.
+    * Redefining the theorem environments, the definition of the question.
+    * Listings — lstlisting
+        For an example of determination lstlisting
+        highlighting for custom language.
+    * Raster graphics — graphicx.
+    * Vector Graphics — tikz, PStriks.
+    * Charts — tikz.
+    * There is an index, and sets its style.
+    * Added packages for describing algorithms in pseudocode
+        — Algorithmic, algorithm, clrscode.
+
+`.sty` file is separated into several ones. Options are grouped by application.
+The index style is defined separately. The style files are
+in the `./styles` folder
+
+# Русский
+
+## Что это?
+
+Шаблон XeTeX для оформления курсовых, лабораторных работ, конспектов лекций.
+
+## Особенности:
+
+    * Настройка свойств документа (для pdf).
+    * Настройка закладок (bookmarks (для pdf)).
+    * Настройка внешнего вида документа.
+    * Переопределение окружений теорема, определение и вопрос.
+    * Листинги — lstlisting
+        Для lstlisting дан пример определение подсветки для произвольного языка.
+    * Растровая графика — graphicx.
+    * Векторная графика — tikz, PStriks.
+    * Диаграммы — tikz.
+    * Есть предметный указатель, и настройка его стиля.
+    * Добавлены пакеты для описания алгоритмов на псевдокоде
+        — algorithmic, algorithm, clrscode.
+
+Стилевой файл разбит на несколько. Настройки сгруппированы по области
+применения. Для предметного указателя стиль определен отдельно.
+Все стилевые файлы лежат в папке `./styles`
+
