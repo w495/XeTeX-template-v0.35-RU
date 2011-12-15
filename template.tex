@@ -44,6 +44,9 @@
 %%% если она поддерживает последние обновдения CTAN.
 
 
+%% Вариант для 14 pt
+% \documentclass[unicode, 14pt, a4paper,oneside,fleqn]{extarticle}
+
 \documentclass[unicode, 12pt, a4paper,oneside,fleqn]{article}
 	%% Варианты []:
 		% fleqn --- сдвигает формулы влево
@@ -52,8 +55,12 @@
 		% book
 		% report
 		% article
+        % extarticle
+        %     (вариaнт позволяет работать с расширенной настройкой шрифтов)
 		% letter
 		% minimal (???)
+
+
 
 \usepackage{styles/init} 
 	% подключаем набор стилей 
