@@ -1,24 +1,46 @@
+TEXSRC=template
 
-TeX=xelatex
-Mi=makeindex
-Del=rm -f
-Src=template
+# TeX
+# --------------------------------------
+TEXC=xelatex 
+IDXC=makeindex
+BIBC=bibtex
 
-all: index pdf
-	$(TeX) $(Src)
+# Clean
+# --------------------------------------
+DEL=rm -f
 
-pdf:
-	$(TeX) $(Src)
 
-index: pdf
-	$(Mi) $(Src)
+# Exec
+# ======================================================================
 
+# TeX
+# --------------------------------------------------
+all: biblio one
+	$(TEXC) $(TEXSRC)
+pdf: biblio one
+	$(TEXC) $(TEXSRC)
+index: one
+	$(IDXC) $(TEXSRC)
+biblio: one
+	$(BIBC) $(TEXSRC)
+one:
+	$(TEXC) $(TEXSRC)
+
+
+# Clean
+# --------------------------------------------------
+cleanall: clean
+	$(DEL) $(TEXSRC).pdf
 clean:
-	$(Del) $(Src).aux
-	$(Del) $(Src).idx
-	$(Del) $(Src).ilg
-	$(Del) $(Src).ind
-	$(Del) $(Src).log
-	$(Del) $(Src).out	
-	$(Del) $(Src).pdf
-	$(Del) $(Src).toc
+	$(DEL) *~
+	$(DEL) $(TEXSRC).aux
+	$(DEL) $(TEXSRC).bbl
+	$(DEL) $(TEXSRC).brf
+	$(DEL) $(TEXSRC).blg
+	$(DEL) $(TEXSRC).idx
+	$(DEL) $(TEXSRC).ilg
+	$(DEL) $(TEXSRC).ind
+	$(DEL) $(TEXSRC).log
+	$(DEL) $(TEXSRC).out
+	$(DEL) $(TEXSRC).toc

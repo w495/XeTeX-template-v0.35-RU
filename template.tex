@@ -47,22 +47,21 @@
 %% Вариант для 14 pt
 % \documentclass[unicode, 14pt, a4paper,oneside,fleqn]{extarticle}
 
-\documentclass[unicode, 12pt, a4paper,oneside,fleqn]{article}
-	%% Варианты []:
-		% fleqn --- сдвигает формулы влево
+%& -shell-escape
 
-	%% Варианты {}:
-		% book
-		% report
-		% article
-        % extarticle
-        %     (вариaнт позволяет работать с расширенной настройкой шрифтов)
-		% letter
-		% minimal (???)
+\documentclass[utf8x, 14pt, a4paper,oneside,fleqn]{extarticle}
+% fleqn --- сдвигает формулы влево
+
+%% Варианты {}:
+% book
+% report
+% article
+% letter
+% minimal (???)
+
+\usepackage{styles/init}
 
 
-
-\usepackage{styles/init} 
 	% подключаем набор стилей 
 	% там были определены базовые настройки шрифтов
 	% и пакетов роботы с графикой и листингами
@@ -86,72 +85,81 @@
 	}
 
 \begin{document}
+    \begin{onehalfspacing}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%
-%%% бесполезное содержимое
-%%%
 
-	\input{src/work-titlepage} 	% титульный лист
-	\tableofcontents 		% оглавление
-	\pagebreak
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%
+        %%% бесполезное содержимое
+        %%%
 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%
-	%%% дополнительное (свое) задание верхнего колонтитула
-	%%% 
-	%%%
-	%	\makeatletter
-	%	\renewcommand{\@oddhead}{ \textcolor{blue}{Лекция (задача) \arabic{lections}} \hfil \par
-	%	\hfil  \leftmark \hfil \rightmark }
-	%	\makeatother
+        \input{src/work-titlepage} 	    % титульный лист (1)
+        \tableofcontents 		        % оглавление
 
-	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%
-%%% полезное содержимое
-%%%
+        \pagebreak
 
-	% пример %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% это просто пример, который, якобы может показать основные особенности, 
-	% фичи и недостатки, 
-	
-		\input{src/examples/about}
-		\supersection{Возможности}
-			\input{src/examples/sources}
-			\input{src/examples/algs}
-			\input{src/examples/pictures}
-			\input{src/examples/plot}
-			
-		\addtocontents{toc}{\protect\pagebreak} 
-		
-		\supersection{Работа с текстом и шрифтами}
-			\input{src/examples/text}
-	
-	% лекции %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
-	%	\input{src/lct-01} %% лекция #1
-	
-	% лабы\курсовые %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
-	%	\input{src/work-problem} 		%% постановка
-	%	\input{src/work-theory} 		%% теоретическая часть
-	%	\input{src/work-solution} 		%% решение
-	%	\input{src/work-example} 		%% примеры
-	%	\input{src/work-conclusions} 	%% выводы
-		
-	% предметный указатель %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%% 
-	%%% дополнительное (свое) задание верхнего колонтитула для предметного указателя
-	%%% 
-		
-		%	\makeatletter
-		%	\renewcommand{\@oddhead}{ \textcolor{blue}{Лекция (задача) \arabic{lections}} \hfil \par
-		%	\hfil  \leftmark \hfil \rightmark }
-		%	\makeatother
-		
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%
+        %%% дополнительное (свое) задание верхнего колонтитула
+        %%%
+        %%%
+        %	\makeatletter
+        %	\renewcommand{\@oddhead}{ \textcolor{blue}{Лекция (задача) \arabic{lections}} \hfil \par
+        %	\hfil  \leftmark \hfil \rightmark }
+        %	\makeatother
+
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%
+        %%% полезное содержимое
+        %%%
+
+        % пример %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % это просто пример, который, якобы может показать основные особенности,
+        % фичи и недостатки,
+
+        \input{src/examples/about}
+        \supersection{Возможности}
+        \input{src/examples/sources}
+        \input{src/examples/algs}
+        \input{src/examples/pictures}
+        \input{src/examples/plot}
+
+        \addtocontents{toc}{\protect\pagebreak}
+
+        \supersection{Работа с текстом и шрифтами}
+        \input{src/examples/text}
+
+        \supersection{Для большой работы}
+        \input{src/graduate/main}       % основная часть
+        \input{src/graduate/titlepage}  % титульный лист (2)
+        \input{src/graduate/biblio}     % список использованных источников
+
+
+        % лекции %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        %	\input{src/lct-01} %% лекция #1
+
+        % лабы\курсовые %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        %	\input{src/work-problem} 		%% постановка
+        %	\input{src/work-theory} 		%% теоретическая часть
+        %	\input{src/work-solution} 		%% решение
+        %	\input{src/work-example} 		%% примеры
+        %	\input{src/work-conclusions} 	%% выводы
+
+        % предметный указатель %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%
+        %%% дополнительное (свое) задание верхнего колонтитула для предметного указателя
+        %%%
+
+            %	\makeatletter
+            %	\renewcommand{\@oddhead}{ \textcolor{blue}{Лекция (задача) \arabic{lections}} \hfil \par
+            %	\hfil  \leftmark \hfil \rightmark }
+            %	\makeatother
+
 		\printindex
-	
+    \end{onehalfspacing}
 \end{document}
 
 %%
