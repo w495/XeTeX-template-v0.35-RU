@@ -12,6 +12,33 @@
 % -------------------------------------------------------
 
 	\usepackage{graphicx} 
+	\usepackage{epsfig}
+	
+	\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+	
+% Keeps floats `in their place', preventing them from floating past a
+% "\FloatBarrier" command into another section.  The floats should not move
+% past every "\section".
+\usepackage[section]{placeins}
+
+% Useful for individually placing figures on a separate page with
+% \afterpage{\clearpage \begin{figure}[p] ... }
+\usepackage{afterpage}
+
+
+\newcommand{\fcaption}[1]{{\captionsetup{skip=12pt,justification=centering,singlelinecheck=false}\caption{#1}}}
+\newenvironment{figured}
+	{
+			\begin{figure}[H]
+				\begin{center}
+	}
+	{
+				\end{center}
+			\end{figure}
+			
+	}
+
+
 	
 % -------------------------------------------------------
 % Цвета
@@ -33,6 +60,10 @@
 
 	\usepackage{tikz}
 		\usetikzlibrary{arrows,shapes,shadows,decorations}
+        \usetikzlibrary{decorations.pathreplacing}
 		\usetikzlibrary{decorations.pathmorphing}
 		\usetikzlibrary{calc}		
+
+
+
 

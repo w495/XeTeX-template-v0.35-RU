@@ -25,94 +25,80 @@
 %%%
 
 	% тут использованы DejaVu шрифты --- они есть почти на всех ОС
-	% к тому же не все шрифты формально поддерживают кириллицу (ругаются когда, их назначаешь основным)
-		
-	\setmainfont{DejaVu Serif}
-	\setsansfont{DejaVu Sans}
-	\setmonofont{DejaVu Sans Mono}
 
-	\setmainfont{Liberation Serif}
-	\setsansfont{Liberation Sans}
-	\setmonofont{Liberation Mono}	
+    \setmainfont{DejaVu Serif}
+    \setsansfont{DejaVu Sans}
+    \setmonofont{DejaVu Sans Mono}
 
-	%\newcommand{\setmaincyrfont}[1]{\newfontfamily{\cyrillicfont}{#1}\setmainfont{#1} }
+    \setmainfont{Liberation Serif}
+    \setsansfont{Liberation Sans}
+    \setmonofont{Liberation Mono}
+
+
+
+	% не все шрифты формально поддерживают кириллицу
+    % (ругаются когда, их назначаешь основным)
+
+	\newcommand{\setmaincyrfont}[1]{\newfontfamily{\cyrillicfont}{#1}\setmainfont{#1} }
 	%% Для некторых шрифтов нужно использовать эту команду.
+	\setmaincyrfont{Times New Roman}
 
-    % \renewcommand{\baselinestretch}{1.5}
-    %% Если нам нужен полуторный интервал, используем эту настройку
-    %%
-    %% Таким образом, вариант для ГОСТ имеет вид:
-    %% 
-    %% \newcommand{\setmaincyrfont}[1]{\newfontfamily{\cyrillicfont}{#1}\setmainfont{#1} }
-    %% \setmaincyrfont{Times New Roman}
-    %% \renewcommand{\baselinestretch}{1.5}
+	\setsansfont{Calibri}
+	\setmonofont{DejaVu Sans Mono}
+	\setromanfont{Liberation Serif}
 
-
-%	\usepackage{lettrine}
-%	\usepackage{indentfirst}
 
 %%%
-%%% Зададим псевдонимы для шрифтов, 
-%%% 	чтобы можно было менять шрифт в тексте
-%%% 	коменндой \fontspec
-%%%		(!)
-%%% 	обязателльно нужно проверить, есть ли у вас такие шрифты
-%%%		если нет, та попробуйте установить из папки fonts, 
-%%%		или заменить на другие
+%%% Зададим псевдонимы для шрифтов,
+%%%     чтобы можно было менять шрифт в тексте
+%%%     коменндой \fontspec
+%%%     (!)
+%%%     обязателльно нужно проверить, есть ли у вас такие шрифты
+%%%     если нет, та попробуйте установить из папки fonts,
+%%%     или заменить на другие
 %%%
 
-	\newcommand{\libertine}{\fontspec{Linux Libertine G}} 
-		% всегда есть в Kubuntu
-		%% если вы не смогли найти замену шрифту, всегда подойдет:
-		%% \renewcommand{\libertine}{\sf}
-	\renewcommand{\libertine}{\sf}
+    \newcommand{\libertine}{\fontspec{Linux Libertine G}}
+        % всегда есть в Kubuntu
+        %% если вы не смогли найти замену шрифту, всегда подойдет:
+        %% \renewcommand{\libertine}{\sf}
+    \renewcommand{\libertine}{\sf}
 
-	\newcommand{\biolinum}{\fontspec{Linux Biolinum G}} 
-		% всегда есть в Kubuntu
-		%% если вы не смогли найти замену шрифту, всегда подойдет:
-		%% \renewcommand{\biolinum}{\sf}
-	\renewcommand{\biolinum}{\sf}
-		
-	\newcommand{\comic}{\fontspec{Comic Sans MS}} 
-		% всегда есть в Windows
-		%% если вы не смогли найти замену шрифту, всегда подойдет:
-		%% \renewcommand{\comic}{\it} 
-	\renewcommand{\comic}{\it}
-		
-	\newcommand{\DoloresCyr}{\fontspec{DoloresCyr Black}}
-		% достаточно редкий шрифт
-		%% если вы не смогли найти замену шрифту, всегда подойдет:
-		%% \renewcommand{\DoloresCyr}{\bf} 
-	\renewcommand{\DoloresCyr}{\bf} 
-		
-	\newcommand{\Garamond}{\fontspec{Garamond}}
-		% часто используется при верстке журналов
-		%% если вы не смогли найти замену шрифту, всегда подойдет:
-		%% \renewcommand{\Garamond}{} 	
-	\renewcommand{\Garamond}{} 	
-		
-	\newcommand{\Calibri}{\fontspec{Calibri}}
-		% всегда есть в Windows
-		%% если вы не смогли найти замену шрифту, всегда подойдет:
-		%% \renewcommand{\Calibri}{} 	
-	\renewcommand{\Calibri}{} 	
-		
-	\newcommand{\IzhitsaC}{\fontspec{IzhitsaC}}
-		% достаточно редкий шрифт
-		%% если вы не смогли найти замену шрифту, всегда подойдет:
-		%% \renewcommand{\IzhitsaC}{\bf \it } 	
-	\renewcommand{\IzhitsaC}{\bf \it }
-	
-%%%
-%%% Другие малораспространенные шрифты:
-%%%		
-	%	\newcommand{\Debby}{\fontspec{Debby}}
-	%	\newcommand{\AnnaC}{\fontspec{AnnaC}}
-	%
-	%	\newcommand{\DoloresCyr}{\fontspec{DoloresCyr Black}}
-	%	\newcommand{\DecorC}{\fontspec{DecorC}}
-	%
-	%	\newcommand{\ZhikharevC}{\fontspec{ZhikharevC}}
-	%	\newcommand{\PragmaticaC}{\fontspec{PragmaticaC}}
-	%	\newcommand{\Mechanica}{\fontspec{Mechanica}}
-	
+    \newcommand{\biolinum}{\fontspec{Linux Biolinum G}}
+        % всегда есть в Kubuntu
+        %% если вы не смогли найти замену шрифту, всегда подойдет:
+        %% \renewcommand{\biolinum}{\sf}
+    \renewcommand{\biolinum}{\sf}
+
+    \newcommand{\comic}{\fontspec{Comic Sans MS}}
+        % всегда есть в Windows
+        %% если вы не смогли найти замену шрифту, всегда подойдет:
+        %% \renewcommand{\comic}{\it}
+    \renewcommand{\comic}{\it}
+
+    \newcommand{\DoloresCyr}{\fontspec{DoloresCyr Black}}
+        % достаточно редкий шрифт
+        %% если вы не смогли найти замену шрифту, всегда подойдет:
+        %% \renewcommand{\DoloresCyr}{\bf}
+    \renewcommand{\DoloresCyr}{\bf}
+
+    \newcommand{\Garamond}{\fontspec{Garamond}}
+        % часто используется при верстке журналов
+        %% если вы не смогли найти замену шрифту, всегда подойдет:
+        %% \renewcommand{\Garamond}{}
+    \renewcommand{\Garamond}{}
+
+    \newcommand{\Calibri}{\fontspec{Calibri}}
+        % всегда есть в Windows
+        %% если вы не смогли найти замену шрифту, всегда подойдет:
+        %% \renewcommand{\Calibri}{}
+    \renewcommand{\Calibri}{}
+
+    \newcommand{\IzhitsaC}{\fontspec{IzhitsaC}}
+        % достаточно редкий шрифт
+        %% если вы не смогли найти замену шрифту, всегда подойдет:
+        %% \renewcommand{\IzhitsaC}{\bf \it }
+    \renewcommand{\IzhitsaC}{\bf \it }
+
+
+

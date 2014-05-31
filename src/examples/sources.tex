@@ -11,7 +11,7 @@
 Пакет хорошо работает с однобайтовыми кодировками, но при любых настроках отказался дружить с utf8.
 
 \begin{lstlisting}
-	\usepackage[utf8]{inputenc}							% кодировка, тут очень аккуратно
+    \usepackage[utf8]{inputenc}							% кодировка, тут очень аккуратно
 \end{lstlisting}
 
 \colorbox{yellow}{Проблема глобальна}.
@@ -19,33 +19,33 @@
 
 %% \begin{lstlisting}[language=Tex, escapeinside='']
 \begin{lstlisting}[escapeinside='', firstnumber=100]
-	%\usepackage{listingsutf8}	
-	\usepackage{listings}
-	\lstset{
-		language=Tex,
-		tabsize=2,
-		breaklines,
-		columns=fullflexible,
-		flexiblecolumns,
-		frame=tb ,
-		numbers=left,
-		numberstyle=\footnotesize\color{gray},
-		escapechar = |, % 'можно вывалиться в \TeX' 
-		extendedchars = false,
-			% extendedchars = true, 
-				%% да именно так но не  \true
-				%% \true == false
-		inputencoding = utf8, % кодировка, очень аккуратно тут
-			% inputencoding = utf8/cp1251, % кодировка, очень аккуратно тут
-		keepspaces = true,
-		belowcaptionskip=5pt
-	}
+    %\usepackage{listingsutf8}
+    \usepackage{listings}
+    \lstset{
+        language=Tex,
+        tabsize=2,
+        breaklines,
+        columns=fullflexible,
+        flexiblecolumns,
+        frame=tb ,
+        numbers=left,
+        numberstyle=\footnotesize\color{gray},
+        escapechar = |, % 'можно вывалиться в \TeX'
+        extendedchars = false,
+            % extendedchars = true,
+                %% да именно так но не  \true
+                %% \true == false
+        inputencoding = utf8, % кодировка, очень аккуратно тут
+            % inputencoding = utf8/cp1251, % кодировка, очень аккуратно тут
+        keepspaces = true,
+        belowcaptionskip=5pt
+    }
 \end{lstlisting}
 
 Пути решения:
 \begin{itemize}
-	\item Не использовать русских комментариев
-	\item Использовать \textbf{verbatim}, 
+    \item Не использовать русских комментариев
+    \item Использовать \textbf{verbatim},
 \end{itemize}
 
 \begin{lstlisting}[language=ConfigNetTopo]
@@ -53,37 +53,32 @@
 
 [[7200]]
 image = /usr//bin/Dynamips/images/c7200-is-mz.122-40.bin
-	ram = 128
-	npe = npe-300
+    ram = 128
+    npe = npe-300
 
 [[3640]]
-	image = /usr/bin/Dynamips/images/3640-is-mz.122-40.bin
-	ram = 64
-	model = 3640
-	slot0 = NM-1E
-	slot1 = NM-1FE-TX
-	slot2 = NM-1FE-TX
-		
+    image = /usr/bin/Dynamips/images/3640-is-mz.122-40.bin
+    ram = 64
+    model = 3640
+    slot0 = NM-1E
+    slot1 = NM-1FE-TX
+    slot2 = NM-1FE-TX
+
 [[ROUTER Alpha]]
 model = 7200
-	slot0 = C7200-IO-FE
-	slot1 = PA-8E
-	f0/0 = LAN 1
-	e1/0 = Client09 e0/0
-	e1/1 = Client10 e0/0	
-	console = 2000
+    slot0 = C7200-IO-FE
+    slot1 = PA-8E
+    f0/0 = LAN 1
+    e1/0 = Client09 e0/0
+    e1/1 = Client10 e0/0
+    console = 2000
 
 [[ROUTER Client09]]
-	model = 3640
-	f1/0 = LAN 2
-	f2/0 = LAN 29		
-	console = 2010		
-		
-[[ROUTER Client10]]
-	model = 3640
-	f1/0 = LAN 2
-	f2/0 = LAN 30	
-	console = 2011
+    model = 3640
+    f1/0 = LAN 2
+    f2/0 = LAN 29
+    console = 2010
+
 \end{lstlisting}
 
 
@@ -96,9 +91,9 @@ model = 7200
 \index{verbatim}
 Его проблемы:
 \begin{itemize}
-	\item Нет подсветки синтаксиса
-	\item Нет номеров строк
-	\item Надо использовать пробелы вместо табуляции
+    \item Нет подсветки синтаксиса
+    \item Нет номеров строк
+    \item Надо использовать пробелы вместо табуляции
 \end{itemize}
 
 \begin{verbatim}
@@ -114,12 +109,12 @@ model = 7200
         numbers=left,
         numberstyle={\footnotesize},
         extendedchars = false,
-                % extendedchars = true, 
+                % extendedchars = true,
                         %% да именно так но не  \true
                         %% \true == false
         inputencoding = utf8, % кодировка, очень аккуратно тут
-                % inputencoding = utf8/cp1251, 
-        belowcaptionskip=5pt 
+                % inputencoding = utf8/cp1251,
+        belowcaptionskip=5pt
     }
 \end{verbatim}
 

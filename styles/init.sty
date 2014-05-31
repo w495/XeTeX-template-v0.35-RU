@@ -48,35 +48,27 @@
 
 	\localStyle{Maths}			% модуль нашей математики 
 	\localStyle{Fonts}			% наши шрифты и локализация и псевдонимы шрифтов
-	\localStyle{Sources}			% модуль наших листингов
-	\localStyle{Tables} 			% модуль наших таблиц
-	\localStyle{Quotes}				% модуль наших цитат
-	\localStyle{Theorems}			% модуль наших теорем и определений
-	\localStyle{Graphics}			% модуль нашей графики
-	\localStyle{Algs}				% модуль наших алгоритмов
-	\localStyle{Pages} 		% модуль нашей ориентации (книжная, албомная)
-	\localStyle{Hypers}		% модуль настройки гиперссылок
-		
-	%% это уже косметика, но мы тоже их вынесем отдельно
-	\localStyle{Lists} 		% модуль наших списков
-							% переопределение буллетов 
-	\localStyle{Sections} 	% модуль наших секций
-							% настройка отображения частей 	
+	\localStyle{Sections} 		% настройка отображения частей
+	\localStyle{Pages} 			% модуль параметром страницы
+	\localStyle{Tables} 		% модуль наших таблиц
+	\localStyle{Graphics}		% модуль нашей графики
+
+	\localStyle{Algs}			% модуль наших алгоритмов
+	\localStyle{Sources}		% модуль наших листингов
+	\localStyle{Lists} 			% модуль наших списков
+	\localStyle{Hypers}			% модуль настройки гиперссылок
+	\localStyle{Biblio}
 	\localStyle{Index}		% предметный указатель
-							%
+
 	\localStyle{etc}		% всевозможные переопределения
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%
 %%% настройка параметров документа
 %%%
-	\oddsidemargin=-0.4mm
-	\textwidth=160mm
-	\topmargin=4.6mm
-	\textheight=240mm % % 210
-	\parindent=0pt
-	\parskip=3pt
-	
-	\makeindex % указываем для предметного указателя
 
+\usepackage{textcase} 
+\usepackage{datetime}
+
+\sloppy
 

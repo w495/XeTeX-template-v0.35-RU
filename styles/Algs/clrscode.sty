@@ -24,7 +24,7 @@
 %
 % Revision 1.2  2003/06/19 14:51:17  thc
 % Fixed a bug that caused this package to interact badly with the
-% color package.  Thanks to Janne Rinta-M�nty for reporting this bug
+% color package.  Thanks to Janne Rinta-Mänty for reporting this bug
 % and suggesting the fix.
 %
 % Revision 1.1  2003/06/11 15:24:25  thc
@@ -100,7 +100,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \ProvidesPackage{clrscode}[2007/03/29 v1.7 format pseudocode]
-\usepackage{latexsym}			% needed for \Comment symbol
+\usepackage{latexsym}           % needed for \Comment symbol
 
 % Commands for typesetting constants, procedure names, identifiers, and
 % fixed functions.
@@ -139,8 +139,8 @@
 
 % The \li command bumps the counter, outputs it, and skips some space
 % A \label cmd for a given numbered line is allowed to appear after the
-% \\, as in 
-%	\li $x\gets y$  \label{li:assign-x}
+% \\, as in
+%   \li $x\gets y$  \label{li:assign-x}
 % But if \li merely set \@currentlabel in the usual way via
 % \refstepcounter, the value of \@currentlabel does not persist outside
 % the current cell.  Solution: use an additional, global variable
@@ -153,7 +153,7 @@
 
 % \code@init is run at the beginning of a codebox environment.
 \def\code@init{%
-  \zeroli%						  producing the first line
+  \zeroli%                        producing the first line
   \setlength{\tabbingsep}{1em}%   distance between numbers and code
   % Initialize \@lilabel to allow a pageref \label cmd at the beginning
   % of the codebox
@@ -209,11 +209,11 @@
 % Use the \Procname macro to give the name of the procedure.
 \newcommand{\Procname}[1]{\global\def\saveprocname{#1}\global\procnametrue}
 
-\newcounter{thisindent}			% counter for recursive indenting code
+\newcounter{thisindent}         % counter for recursive indenting code
 \newcommand{\Indent}{\setcounter{thisindent}{\value{indent}}\putindents}
 % \putindents is a recursive macro that indents a number of times given
 % by the counter thisindent.
-\newcommand{\putindents}{\ifnum\value{thisindent}>0\>\>\addtocounter{thisindent}{-1}\putindents\fi}
+\newcommand{\putindents}{\ifnum\value{thisindent}>0\>\addtocounter{thisindent}{-1}\putindents\fi}
 
 % For typesetting any keyword in the main text.
 \newcommand{\kw}[1]{\textbf{#1}}
@@ -224,20 +224,43 @@
 \newcommand{\By}{\textbf{by} }
 \newcommand{\Downto}{\textbf{downto} }
 \newcommand{\While}{\textbf{while} }
-\newcommand{\Repeat}{\textbf{repeat}\>\>\addtocounter{indent}{1}}
-\newcommand{\Until}{\kill\addtocounter{indent}{-1}\liprint\>\>\textbf{until}\hspace*{-0.7em}\'}
+\newcommand{\Repeat}{\textbf{repeat}\>\addtocounter{indent}{1}}
+\newcommand{\Until}{\kill\addtocounter{indent}{-1}\liprint\>\textbf{until}\hspace*{-0.7em}\'}
 \newcommand{\If}{\textbf{if} }
 \newcommand{\Then}{\>\textbf{then}\>\addtocounter{indent}{1}}
 \newcommand{\Else}{\kill\addtocounter{indent}{-1}\liprint\>\textbf{else}\>\addtocounter{indent}{1}}
 \newcommand{\End}{\addtocounter{indent}{-1}}
 \newcommand{\ElseIf}{\kill\addtocounter{indent}{-1}\liprint\textbf{elseif} }
 \newcommand{\ElseNoIf}{\kill\addtocounter{indent}{-1}\liprint\textbf{else} \addtocounter{indent}{1}}
-\newcommand{\Do}{\>\>\textbf{do}\hspace*{-0.7em}\'\addtocounter{indent}{1}}
+
+\newcommand{\Do}{\textbf{:}\addtocounter{indent}{1}}
+
+%\newcommand{\Do}{\>\textbf{do}\hspace*{-0.7em}\'\addtocounter{indent}{1}}
+
 \newcommand{\Return}{\textbf{return} }
 \newcommand{\Comment}{$\hspace*{-0.075em}\rhd$ }
 \newcommand{\RComment}{\`\Comment}
 \newcommand{\Goto}{\textbf{goto} }
 \newcommand{\Error}{\textbf{error} } % optionally followed by string argument
+
+\newcommand{\Для}{\textbf{для} }
+\newcommand{\В}{\textbf{в} }
+\newcommand{\До}{\textbf{до} }
+\newcommand{\Пока}{\textbf{пока} }
+\newcommand{\Повтор}{\textbf{повтор}\>\addtocounter{indent}{1}}
+\newcommand{\ПокаНе}{\kill\addtocounter{indent}{-1}\liprint\>\textbf{пока не}\hspace*{-0.7em}\'}
+\newcommand{\Если}{\textbf{если} }
+\newcommand{\Тогда}{\>\textbf{тогда}\>\addtocounter{indent}{1}}
+\newcommand{\Иначе}{\kill\addtocounter{indent}{-1}\liprint\>\textbf{иначе}\>\addtocounter{indent}{1}}
+\newcommand{\Конец}{\addtocounter{indent}{-1}}
+\newcommand{\ИначеEсли}{\kill\addtocounter{indent}{-1}\liprint\textbf{иначе если} }
+\newcommand{\ИначеEслиHе}{\kill\addtocounter{indent}{-1}\liprint\textbf{иначе если не} \addtocounter{indent}{1}}
+\newcommand{\Выполняет}{\>\textbf{выполняет}\hspace*{-0.7em}\'\addtocounter{indent}{1}}
+\newcommand{\Возвращает}{\textbf{возвращает} }
+\newcommand{\Ком}{$\hspace*{-0.075em}\rhd$ }
+\newcommand{\РКом}{\`\Ком}
+\newcommand{\Переход}{\textbf{переход} }
+\newcommand{\Ошибка}{\textbf{ошибка} } % optionally followed by string argument
 
 % Indent the next line one level more
 \newcommand{\Indentmore}{\addtocounter{indent}{1}}
@@ -285,4 +308,4 @@
 \iffirstcodeline\global\firstcodelinefalse\else\\ \fi
 \liprint}
 
-\endinput
+\endinput 
